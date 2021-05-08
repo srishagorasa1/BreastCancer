@@ -1,0 +1,35 @@
+#Installing package if it is not present
+package_listing <- c('data.table', 'tidyverse','DT' , 'leaflet','plotly','ggthemes')
+
+for (required_package in package_listing) {
+  if (!require(required_package, character.only = T, quietly = T)) {
+    install.packages(required_package, repos = "http://cran.us.r-project.org")
+    library(required_package, character.only = T)
+  }
+}
+#Loading the packages
+library(data.table)
+library(tidyverse)
+library(DT)
+library(plotly)
+library(corrplot)
+library(caret)
+library(class)
+library(ggthemes)     # ggplot themes
+library(randomForest)
+library(pROC)
+library("verification")
+library(kernlab)      # SVM methodology
+library(e1071)        # SVM methodology
+library(RColorBrewer) # customized coloring of plots for svm
+setwd("C:/Users/Avi/Desktop/TBANLT 560A/DMBA-R-datasets/DMBA-R-datasets/WiscinsonBreastCancer.csv")
+
+breast.data <- read.csv("Breast Cancer Wisconsin data.csv")
+str(breast.data)
+fwrite(x = as.data.frame(summary(breast.data)), file = "foo.csv")
+
+breast.data[,33] <- NULL # Lat column had NA values. Removing it
+
+sum(is.null(breast.data)) #No NA values
+breast.data[duplicated(breast.data)]  # 0 duplicates
+prop.table(table(breast.data$diagnosis)) # Class imbalance with 62% benign and 37% malignant
