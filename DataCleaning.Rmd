@@ -1,3 +1,10 @@
+---
+title: "Untitled"
+author: "Srisha Gorasa"
+date: "5/9/2021"
+output: word_document
+---
+```{r}
 #Installing package if it is not present
 package_listing <- c('data.table', 'tidyverse','DT' , 'leaflet','plotly','ggthemes')
 
@@ -7,6 +14,9 @@ for (required_package in package_listing) {
     library(required_package, character.only = T)
   }
 }
+```
+
+```{r}
 #Loading the packages
 library(data.table)
 library(tidyverse)
@@ -22,14 +32,31 @@ library("verification")
 library(kernlab)      # SVM methodology
 library(e1071)        # SVM methodology
 library(RColorBrewer) # customized coloring of plots for svm
-setwd("C:/Users/Avi/Desktop/TBANLT 560A/DMBA-R-datasets/DMBA-R-datasets/WiscinsonBreastCancer.csv")
+```
 
-breast.data <- read.csv("Breast Cancer Wisconsin data.csv")
+```{r}
+breast.data <- read.csv("/Users/srishachandragiri/Downloads/data.csv")
+```
+
+```{r}
 str(breast.data)
+```
+```{r}
 fwrite(x = as.data.frame(summary(breast.data)), file = "foo.csv")
 
 breast.data[,33] <- NULL # Lat column had NA values. Removing it
 
 sum(is.null(breast.data)) #No NA values
+```
+
+```{r}
 breast.data[duplicated(breast.data)]  # 0 duplicates
+```
+
+```{r}
 prop.table(table(breast.data$diagnosis)) # Class imbalance with 62% benign and 37% malignant
+```
+The dataset contained one columns in which all the values were missing. This column was removed from the dataset. Apart from this the data didn’t contain any missing values.
+The dataset contained 0 duplicate values
+62% are benign and 37% are malignant cancer cases in the dataset.
+The dataset does contain a column where all values are null values. This column was dropped from the dataset.
