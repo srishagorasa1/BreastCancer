@@ -1,5 +1,4 @@
 # BreastCancer
-Class Project - A supervised machine learning project on predicting Breast Cancer based on Wiscinson data
 
 **Introduction** 
 Breast cancer is a malignant cell growth in the breast. If left untreated, the cancer spreads to other areas of the body. Excluding skin cancer, breast cancer is the most common type of cancer in women in the United States, accounting for one of every three cancer diagnoses. Breast cancer ranks second among cancer deaths in women. This project aims at analyzing data of women residing in the state of Wisconsin, USA for to predict whether a case of breast cancer is malignant or benign.
