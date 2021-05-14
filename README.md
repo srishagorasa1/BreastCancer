@@ -27,7 +27,7 @@ Ten real-valued features are computed for each cell nucleus:
 10. fractal dimension (“coastline approximation” - 1)
 The variables are divided into three parts first is Mean (3-13), Stranded Error (13-23) and Worst (23-32) and each contain 10 parameters (radius, texture, area, perimeter, smoothness, compactness, concavity, concave points, symmetry and fractal dimension). Mean is the means of the all cells, standard Error of all cell and worst means the worst cell.
 
-**Data cleaning and preparation**
+**Data Preprocessing**
 This stage would include identifying if the data set contains any missing values or bad data.
 
 **Modeling:**
